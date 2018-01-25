@@ -22,4 +22,14 @@
     <color name="theme_primary_dark">#04561A</color>
     <color name="theme_accent">#04561A</color>
     <color name="ltgray">#ffe0e0e0</color>
+
+    <color name="fragment_article_detail__article_title">@android:color/white</color>
+    <color name="fragment_article_detail__article_byline">#8fff</color>
+
+    <color name="list_item_article__article_body">@android:color/black</color>
+    <color name="list_item_article__article_body_link">@color/theme_accent</color>
+
+    <color name="list_item_article__article_title">@android:color/black</color>
+    <color name="list_item_article__article_subtitle">@android:color/black</color>
+
 </resources>

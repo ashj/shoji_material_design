@@ -9,4 +9,7 @@
 
     <string name="up">Up</string>
 
+
+    <string name="fragment_article_detail_font_family__article_title" translatable="false">sans-serif-condensed</string>
+    <string name="fragment_article_detail_font_family__article_body" translatable="false">roboto</string>
 </resources>
