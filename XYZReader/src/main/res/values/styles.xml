@@ -16,7 +16,11 @@
 -->
 
 <resources>
+    <!-- [START] [REQ#03] App theme extends from AppCompat -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
 
+    </style>
+    <!-- [END] [REQ#03] App theme extends from AppCompat -->
     <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
 
     </style>
