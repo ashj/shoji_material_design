@@ -20,6 +20,9 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimaryDark">@color/primary_dark_material_dark</item>
         <item name="colorPrimary">@color/primary_material_dark</item>
+
+        <item name="android:windowContentTransitions">true</item>
+        <!-- <item name="android:windowExitTransition">@transition/article_list_activity_exit</item> -->
     </style>
     <!-- [END] [REQ#03] App theme extends from AppCompat -->
 
