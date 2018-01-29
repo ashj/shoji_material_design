@@ -11,7 +11,7 @@ public class Config {
 
     static {
         URL url = null;
-	String urlString = "https://raw.githubusercontent.com/TNTest/xyzreader/master/data.json"
+	String urlString = "https://raw.githubusercontent.com/TNTest/xyzreader/master/data.json";
         try {
             url = new URL(urlString);
         } catch (MalformedURLException ignored) {
