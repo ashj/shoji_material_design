@@ -23,6 +23,8 @@
     <color name="theme_accent">#04561A</color>
     <color name="ltgray">#ffe0e0e0</color>
 
+    <color name="activity_article_list__toolbar">#FD5624</color>
+
     <color name="fragment_article_detail__article_title">@android:color/white</color>
     <color name="fragment_article_detail__article_byline">#8fff</color>
 
