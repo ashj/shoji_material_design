@@ -152,10 +152,10 @@ public class ArticleListActivity extends AppCompatActivity implements
                     Bundle bundle = ActivityOptions
                             .makeSceneTransitionAnimation(mActivity,
                                     sharedView,
-                                    sharedView.getTransitionName())
+                                    getString(R.string.transition_article_list_to_article_detail_photo))
                             .toBundle();
                     startActivity(new Intent(Intent.ACTION_VIEW,
-                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))), bundle);
+                            ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))), null);
                 }
             });
             return vh;
