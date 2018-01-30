@@ -18,6 +18,7 @@ import java.util.GregorianCalendar;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ShareCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.graphics.Palette;
@@ -61,7 +62,10 @@ public class ArticleDetailFragment extends Fragment implements
     private int mScrollY;
     private boolean mIsCard = false;
     private int mStatusBarFullOpacityBottom;
+    private FloatingActionButton mShareBookFAB;
 
+    private String mAuthor;
+    private String mTitle;
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss");
     // Use default locale format
     private SimpleDateFormat outputFormat = new SimpleDateFormat();
@@ -123,13 +127,13 @@ public class ArticleDetailFragment extends Fragment implements
         mCollapsingToolbarLayout.setTitle(null);
 
         mStatusBarColorDrawable = new ColorDrawable(0);
-
-        mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
+        mShareBookFAB = (FloatingActionButton) mRootView.findViewById(R.id.share_fab);
+        mShareBookFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
                         .setType("text/plain")
-                        .setText("Some sample text")
+                        .setText(getString(R.string.fab_share_message, mTitle, mAuthor))
                         .getIntent(), getString(R.string.action_share)));
             }
         });
@@ -190,10 +194,13 @@ public class ArticleDetailFragment extends Fragment implements
         TextView bodyView = (TextView) mRootView.findViewById(R.id.article_body);
 
         if (mCursor != null) {
-            mRootView.setAlpha(0);
+            mAuthor = mCursor.getString(ArticleLoader.Query.AUTHOR);
+            mTitle = mCursor.getString(ArticleLoader.Query.TITLE);
+
             mRootView.setVisibility(View.VISIBLE);
-            mRootView.animate().alpha(1);
-            titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
+            mShareBookFAB.setVisibility(View.VISIBLE);
+
+            titleView.setText(mTitle);
             Date publishedDate = parsePublishedDate();
             if (!publishedDate.before(START_OF_EPOCH.getTime())) {
                 bylineView.setText(Html.fromHtml(
@@ -202,7 +209,7 @@ public class ArticleDetailFragment extends Fragment implements
                                 System.currentTimeMillis(), DateUtils.HOUR_IN_MILLIS,
                                 DateUtils.FORMAT_ABBREV_ALL).toString()
                                 + " by <font color='#ffffff'>"
-                                + mCursor.getString(ArticleLoader.Query.AUTHOR)
+                                + mAuthor
                                 + "</font>"));
 
             } else {

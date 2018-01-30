@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <string name="app_name">XYZ Reader</string>
     <string name="welcome_xyz_reader">Welcome to XYZ Reader!</string>
@@ -8,6 +8,8 @@
     <string name="action_share">Share</string>
 
     <string name="up">Up</string>
+
+    <string name="fab_share_message">I am reading \"<xliff:g>%1$s</xliff:g>\" by <xliff:g>%2$s</xliff:g></string>
 
     <string name="long_text_test">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique ac velit sed finibus. Aenean ullamcorper ex ut bibendum vestibulum. Nunc felis eros, lacinia id velit eu, rutrum facilisis est. Cras eget orci non quam luctus malesuada id vel diam. Sed interdum eros ac urna ultrices, ut sodales libero maximus. Phasellus mattis aliquam lacus, ac ultricies arcu finibus a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi neque massa, luctus vitae massa eget, ultrices varius felis. Cras euismod dui volutpat, gravida justo id, porttitor tellus. Curabitur lacinia ante ut mi feugiat, vel porta odio porta. Etiam sed justo finibus, vestibulum ipsum bibendum, aliquam ligula. Pellentesque congue pulvinar cursus. Aenean sodales nisl vitae tincidunt feugiat. Morbi est sem, euismod eget lobortis vitae, semper et eros.</string>
     <string name="fragment_article_detail_font_family__article_title" translatable="false">sans-serif-condensed</string>
