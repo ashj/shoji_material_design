@@ -18,20 +18,12 @@
 <resources>
     <!-- [START] [REQ#03] App theme extends from AppCompat -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimaryDark">@color/primary_dark_material_dark</item>
-        <item name="colorPrimary">@color/primary_material_dark</item>
+        <item name="colorPrimaryDark">@color/theme_primary_dark</item>
+        <item name="colorPrimary">@color/theme_primary</item>
+        <item name="colorAccent">@color/theme_accent</item>
 
         <item name="android:windowContentTransitions">true</item>
         <!-- <item name="android:windowExitTransition">@transition/article_list_activity_exit</item> -->
     </style>
     <!-- [END] [REQ#03] App theme extends from AppCompat -->
-
-    <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
-
-    </style>
-
-    <style name="Theme.Bacon.Detail">
-        <item name="android:statusBarColor">@android:color/transparent</item>
-    </style>
-
 </resources>
