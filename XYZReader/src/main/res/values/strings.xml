@@ -16,4 +16,5 @@
     <string name="fragment_article_detail_font_family__article_body" translatable="false">roboto</string>
 
     <string name="transition_article_list_to_article_detail_photo" translatable="false">transition_article_list_to_article_detail_photo</string>
+    <string name="error_no_network_short">No Internet connectivity</string>
 </resources>

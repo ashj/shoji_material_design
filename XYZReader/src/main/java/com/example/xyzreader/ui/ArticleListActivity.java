@@ -9,7 +9,10 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.Loader;
 import android.database.Cursor;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
@@ -69,7 +72,11 @@ public class ArticleListActivity extends AppCompatActivity implements
         getLoaderManager().initLoader(0, null, this);
 
         if (savedInstanceState == null) {
-            refresh();
+            if(!isNetworkConnected()) {
+                showSnackbar();
+            }
+            else
+                refresh();
         }
     }
 
@@ -215,5 +222,22 @@ public class ArticleListActivity extends AppCompatActivity implements
             titleView = (TextView) view.findViewById(R.id.article_title);
             subtitleView = (TextView) view.findViewById(R.id.article_subtitle);
         }
+    }
+
+    private void showSnackbar() {
+        Snackbar snackbar = Snackbar.make(findViewById(R.id.layout_root),
+                R.string.error_no_network_short,
+                Snackbar.LENGTH_LONG);
+
+        snackbar.show();
+    }
+
+    private boolean isNetworkConnected() {
+        ConnectivityManager cm =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = cm.getActiveNetworkInfo();
+
+        return (networkInfo != null) &&
+                (networkInfo.isConnectedOrConnecting());
     }
 }
