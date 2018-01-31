@@ -11,5 +11,6 @@
     <dimen name="fab_margin">24dp</dimen>
 
     <dimen name="scroll_up_distance">8dp </dimen>
+    <dimen name="logo_margin">12dp</dimen>
 
 </resources>
